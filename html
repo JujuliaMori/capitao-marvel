@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Capitã Marvel - Correção de Imagem</title>
+    <style>
+        /* Fundo da tela totalmente branco */
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* Retângulo colorido centralizado com o seu gradiente original */
+        .retangulo-colorido {
+            position: relative;
+            width: 420px;
+            height: 280px;
+            background: linear-gradient(45deg, #d41e31, #491f8f);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        /* Texto posicionado no lado esquerdo estruturado em 10 linhas */
+        .texto-revelado {
+            position: absolute;
+            left: 25px;
+            width: 160px; 
+            color: #ffffff;
+            font-size: 18px; /* Fonte maior */
+            font-weight: bold;
+            line-height: 1.35;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            pointer-events: none;
+        }
+
+        /* Imagem integrada que fica no centro do retângulo */
+        .retangulo-colorido img {
+            position: absolute;
+            height: 110%;
+            width: auto;
+            object-fit: contain;
+            bottom: -5px;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 2;
+        }
+
+        /* EFEITO AO PASSAR O MOUSE (HOVER) */
+        
+        /* Desloca a imagem para o lado direito */
+        .retangulo-colorido:hover img {
+            transform: translateX(35%);
+        }
+
+        /* Revela o texto grande estruturado no lado esquerdo */
+        .retangulo-colorido:hover .texto-revelado {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="retangulo-colorido">
+        <!-- Texto com tamanho grande ordenado em 10 linhas -->
+        <div class="texto-revelado">
+            Força<br>
+            Suprema<br>
+            E<br>
+            Poder<br>
+            Total<br>
+            Defendendo<br>
+            O<br>
+            Universo<br>
+            Com<br>
+            Coragem!
+        </div>
+        
+        <!-- Imagem enviada incorporada diretamente via Base64 -->
+        <img src="1 (1).png" alt="Capitã Marvel">
+    </div>
+
+</body>
+</html>
